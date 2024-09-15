@@ -1,18 +1,14 @@
 replicaCount: 1
-
 image:
   repository: kupidun/nasa-flask-app
   pullPolicy: IfNotPresent
-  tag: "1.0.3"
-
+  tag: "00f08c2"
 serviceAccount:
   create: true
   name: ""
-
 service:
   type: ClusterIP
   port: 5000
-
 ingress:
   enabled: true
   annotations:
@@ -23,15 +19,13 @@ ingress:
         - path: /
           pathType: Prefix
   tls: []
-
-resources: 
+resources:
   limits:
     cpu: 100m
     memory: 128Mi
   requests:
     cpu: 100m
     memory: 128Mi
-
 livenessProbe:
   httpGet:
     path: /
@@ -45,14 +39,9 @@ readinessProbe:
     port: 5000
   initialDelaySeconds: 60
   periodSeconds: 30
-  timeoutSeconds: 5 
-
+  timeoutSeconds: 5
 autoscaling:
   enabled: false
-
 nodeSelector: {}
-
 tolerations: []
-
 affinity: {}
-
