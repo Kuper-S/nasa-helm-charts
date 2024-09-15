@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: kupidun/nasa-flask-app
   pullPolicy: IfNotPresent
-  tag: "daa3a4b"
+  tag: "9e8e346"
 serviceAccount:
   create: true
   name: ""
