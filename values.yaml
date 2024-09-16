@@ -48,7 +48,10 @@ readinessProbe:
   timeoutSeconds: 5 
 
 autoscaling:
-  enabled: false
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 75
 
 nodeSelector: {}
 
